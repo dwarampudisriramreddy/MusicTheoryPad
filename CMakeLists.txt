@@ -5,13 +5,14 @@ include(FetchContent)
 FetchContent_Declare(
     juce
     GIT_REPOSITORY https://github.com/juce-framework/JUCE.git
-    GIT_TAG        7.0.9 # Use a stable JUCE 7 tag
+    GIT_TAG        8.0.0 # Upgrade to JUCE 8 for Android CMake support
 )
 FetchContent_MakeAvailable(juce)
 
 juce_add_gui_app(MusicTheoryPad
     PRODUCT_NAME "Music Theory Pad"
     VERSION ${PROJECT_VERSION}
+    FORMATS Android Standalone
 )
 
 juce_generate_juce_header(MusicTheoryPad)

@@ -48,7 +48,7 @@ jobs:
 
     - name: Build APK via Gradle
       run: |
-        cd build-android/MusicTheoryPad_artefacts/Build/Android
+        cd build-android/MusicTheoryPad_artefacts/Android
         chmod +x gradlew
         ./gradlew assembleRelease
 
@@ -56,4 +56,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: MusicTheoryPad-Android
-        path: build-android/MusicTheoryPad_artefacts/Build/Android/app/build/outputs/apk/release/*.apk
+        path: build-android/MusicTheoryPad_artefacts/Android/app/build/outputs/apk/release/*.apk
