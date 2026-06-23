@@ -21,8 +21,10 @@ jobs:
         distribution: 'temurin'
 
     - name: Install JUCE Host Dependencies
-      run: sudo apt-get update && sudo apt-get install -y libx11-dev libfreetype6-dev libxext-dev libxinerama-dev libxcursor-dev libxrandr-dev libasound2-dev libcurl4-openssl-dev pkg-config
-
+      run: |
+        sudo apt-get update && sudo apt-get install -y libx11-dev libfreetype6-dev libfreetype-dev libxext-dev libxinerama-dev libxcursor-dev libxrandr-dev libasound2-dev libcurl4-openssl-dev pkg-config
+        sudo ln -s /usr/include/freetype2/freetype /usr/include/freetype || true
+        sudo ln -s /usr/include/freetype2/ft2build.h /usr/include/ft2build.h || true
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
