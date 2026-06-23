@@ -20,6 +20,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    - name: Install JUCE Host Dependencies
+      run: sudo apt-get update && sudo apt-get install -y libx11-dev libfreetype6-dev libxext-dev libxinerama-dev libxcursor-dev libxrandr-dev libasound2-dev libcurl4-openssl-dev pkg-config
+
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
