@@ -14,6 +14,8 @@ juce_add_gui_app(MusicTheoryPad
     VERSION ${PROJECT_VERSION}
 )
 
+juce_generate_juce_header(MusicTheoryPad)
+
 target_sources(MusicTheoryPad PRIVATE
     Source/Main.cpp
     Source/MainComponent.h
