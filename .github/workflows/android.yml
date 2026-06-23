@@ -53,7 +53,7 @@ jobs:
         GRADLE_DIR=$(find build-android -name gradlew | head -n 1 | xargs dirname)
         cd "$GRADLE_DIR"
         chmod +x gradlew
-        ./gradlew assembleRelease
+        ./gradlew assembleDebug
 
     - name: Find and Upload APK
       uses: actions/upload-artifact@v4
