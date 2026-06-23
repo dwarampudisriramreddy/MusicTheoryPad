@@ -43,13 +43,17 @@ jobs:
           -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
           -S .
 
-    - name: Build
+    - name: Build Native Libraries
       run: cmake --build build-android --config Release
 
-    # When compiling JUCE for Android via CMake, it typically generates
-    # the APK in the build directory under the intermediate java/gradle folders.
+    - name: Build APK via Gradle
+      run: |
+        cd build-android/MusicTheoryPad_artefacts/Build/Android
+        chmod +x gradlew
+        ./gradlew assembleRelease
+
     - name: Find and Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: MusicTheoryPad-Android
-        path: build-android/**/*.apk
+        path: build-android/MusicTheoryPad_artefacts/Build/Android/app/build/outputs/apk/release/*.apk
