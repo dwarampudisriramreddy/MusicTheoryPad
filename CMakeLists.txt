@@ -66,6 +66,8 @@ target_compile_definitions(MusicTheoryPad
         JUCE_USE_CURL=0
         JUCE_VST3_CAN_REPLACE_VST2=0
         JUCE_STRICT_REFCOUNTEDPOINTER=1
+        JUCE_PUSH_NOTIFICATIONS=1
+        JUCE_PUSH_NOTIFICATIONS_ACTIVITY="com/rmsl/juce/JuceActivity"
 )
 
 target_link_libraries(MusicTheoryPad PRIVATE
