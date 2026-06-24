@@ -15,6 +15,7 @@ juce_add_gui_app(MusicTheoryPad
     PRODUCT_NAME "Music Theory Pad"
     VERSION ${PROJECT_VERSION}
     FORMATS Android Standalone
+    PUSH_NOTIFICATIONS_ENABLED TRUE
 )
 
 juce_generate_juce_header(MusicTheoryPad)
