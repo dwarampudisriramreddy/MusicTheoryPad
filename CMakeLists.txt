@@ -7,6 +7,8 @@ FetchContent_Declare(
     GIT_REPOSITORY https://github.com/juce-framework/JUCE.git
     GIT_TAG        8.0.0 # Upgrade to JUCE 8 for Android CMake support
 )
+set(JUCE_BUILD_EXTRAS OFF CACHE BOOL "Disable extras" FORCE)
+set(JUCE_BUILD_EXAMPLES OFF CACHE BOOL "Disable examples" FORCE)
 FetchContent_MakeAvailable(juce)
 
 juce_add_gui_app(MusicTheoryPad

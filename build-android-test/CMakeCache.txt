@@ -15,13 +15,13 @@
 ########################
 
 //No help, variable specified on the command line.
-ANDROID_NDK:UNINITIALIZED=
-
-//No help, variable specified on the command line.
 CMAKE_ANDROID_ARCH_ABI:UNINITIALIZED=arm64-v8a
 
 //No help, variable specified on the command line.
 CMAKE_ANDROID_NDK:UNINITIALIZED=
+
+//No help, variable specified on the command line.
+CMAKE_ANDROID_STL_TYPE:UNINITIALIZED=c++_shared
 
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/home/sri/MusicTheoryPad/build-android-test/CMakeFiles/pkgRedirects
@@ -84,7 +84,7 @@ CMAKE_CTEST_COMMAND:INTERNAL=/usr/bin/ctest
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
-CMAKE_GENERATOR:INTERNAL=Unix Makefiles
+CMAKE_GENERATOR:INTERNAL=Ninja
 //Generator instance identifier.
 CMAKE_GENERATOR_INSTANCE:INTERNAL=
 //Name of generator platform.

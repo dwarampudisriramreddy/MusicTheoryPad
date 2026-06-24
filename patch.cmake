@@ -1,0 +1,2 @@
+set(JUCE_BUILD_EXTRAS OFF CACHE BOOL "Disable extras" FORCE)
+set(JUCE_BUILD_EXAMPLES OFF CACHE BOOL "Disable examples" FORCE)
