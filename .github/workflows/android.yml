@@ -64,7 +64,7 @@ jobs:
 
     - name: Build APK via Gradle
       run: |
-        GRADLE_DIR=$(find build-android -name gradlew | head -n 1 | xargs dirname)
+        GRADLE_DIR=$(find build-android -name gradlew | grep -v "_deps" | head -n 1 | xargs dirname)
         cd "$GRADLE_DIR"
         chmod +x gradlew
         ./gradlew assembleDebug
