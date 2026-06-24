@@ -27,7 +27,9 @@ MainComponent::~MainComponent() { shutdownAudio(); }
 void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) { audioEngine.prepareToPlay(samplesPerBlockExpected, sampleRate); }
 void MainComponent::getNextAudioBlock(const juce::AudioSourceChannelInfo& bufferToFill) { audioEngine.getNextAudioBlock(bufferToFill); }
 void MainComponent::releaseResources() { audioEngine.releaseResources(); }
-void MainComponent::paint(juce::Graphics& g) { g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId)); }
+void MainComponent::paint(juce::Graphics& g) { 
+    g.fillAll(juce::Colour(0xff121212)); // Dark DAW background
+}
 void MainComponent::resized() {
     auto b = getLocalBounds();
     headerBar.setBounds(b.removeFromTop(60));
@@ -35,22 +37,22 @@ void MainComponent::resized() {
     sidebar.setBounds(b.removeFromLeft(sidebarVisible ? 200 : 0));
     contentViewport.setBounds(b);
     
-    int contentHeight = 800;
-    contentPanel.setBounds(0, 0, b.getWidth(), contentHeight);
+    int contentHeight = 1100; // Give enough space for piano rolls
+    contentPanel.setBounds(0, 0, b.getWidth() > 0 ? b.getWidth() - 20 : 1000, contentHeight);
     
     auto p = contentPanel.getLocalBounds().reduced(10);
     controlsPanel.setBounds(p.removeFromTop(60));
     p.removeFromTop(10);
-    chordPalette.setBounds(p.removeFromTop(80));
+    chordPalette.setBounds(p.removeFromTop(100));
     p.removeFromTop(10);
-    progressionComponent.setBounds(p.removeFromTop(80));
+    progressionComponent.setBounds(p.removeFromTop(100));
     p.removeFromTop(10);
     theoryInfo.setBounds(p.removeFromTop(60));
     p.removeFromTop(10);
-    chordRoll.setBounds(p.removeFromTop(120));
+    chordRoll.setBounds(p.removeFromTop(200));
     p.removeFromTop(10);
-    melodyRoll.setBounds(p.removeFromTop(160));
+    melodyRoll.setBounds(p.removeFromTop(200));
     p.removeFromTop(10);
-    drumRoll.setBounds(p.removeFromTop(160));
+    drumRoll.setBounds(p.removeFromTop(200));
 }
 void MainComponent::timerCallback() {}
