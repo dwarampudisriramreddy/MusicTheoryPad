@@ -7,7 +7,7 @@ class PianoRollSection : public CardComponent {
 public:
     PianoRollSection(RollType type, const juce::String& name) : grid(type) {
         trackNameLabel.setText(name, juce::dontSendNotification);
-        trackNameLabel.setFont(juce::Font(16.0f, juce::Font::bold));
+        trackNameLabel.setFont(juce::FontOptions(16.0f));
         addAndMakeVisible(trackNameLabel);
         
         addAndMakeVisible(viewport);

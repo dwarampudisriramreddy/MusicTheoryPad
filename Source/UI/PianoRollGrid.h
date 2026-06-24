@@ -30,7 +30,7 @@ public:
             
             // Draw grid lanes
             g.setColour(isBlack ? juce::Colour(0xff2a2a2a) : juce::Colour(0xff3a3a3a));
-            g.fillRect((float)keyWidth, y, bounds.getWidth() - keyWidth, keyHeight);
+            g.fillRect((float)keyWidth, y, (float)(bounds.getWidth() - keyWidth), keyHeight);
             g.setColour(juce::Colours::black.withAlpha(0.3f));
             g.drawLine(keyWidth, y, bounds.getWidth(), y);
         }

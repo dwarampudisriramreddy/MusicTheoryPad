@@ -6,7 +6,7 @@ class ChordPaletteComponent : public CardComponent {
 public:
     ChordPaletteComponent() {
         titleLabel.setText("Chord Palette", juce::dontSendNotification);
-        titleLabel.setFont(juce::Font(16.0f, juce::Font::bold));
+        titleLabel.setFont(juce::FontOptions(16.0f));
         addAndMakeVisible(titleLabel);
     }
     
