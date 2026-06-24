@@ -81,3 +81,7 @@ target_link_libraries(MusicTheoryPad PRIVATE
     juce::juce_gui_basics
     juce::juce_gui_extra
 )
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Android")
+    set_target_properties(MusicTheoryPad PROPERTIES OUTPUT_NAME "juce_jni")
+endif()
