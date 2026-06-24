@@ -64,8 +64,7 @@ jobs:
 
     - name: Build APK via Gradle
       run: |
-        GRADLE_DIR=$(find build-android -name gradlew | grep -v "_deps" | head -n 1 | xargs dirname)
-        cd "$GRADLE_DIR"
+        cd android
         chmod +x gradlew
         ./gradlew assembleDebug
 
@@ -73,4 +72,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: MusicTheoryPad-Android
-        path: build-android/**/*.apk
+        path: android/app/build/outputs/apk/debug/**/*.apk
