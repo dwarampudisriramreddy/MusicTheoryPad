@@ -16,6 +16,9 @@ public:
         addAndMakeVisible(stopButton);
         addAndMakeVisible(recordButton);
         
+        playButton.onClick = [this]() { if (onPlayClicked) onPlayClicked(); };
+        stopButton.onClick = [this]() { if (onStopClicked) onStopClicked(); };
+        
         transportSlider.setSliderStyle(juce::Slider::LinearHorizontal);
         transportSlider.setTextBoxStyle(juce::Slider::NoTextBox, false, 0, 0);
         addAndMakeVisible(transportSlider);
@@ -37,6 +40,9 @@ public:
         b.removeFromLeft(20);
         transportSlider.setBounds(b);
     }
+
+    std::function<void()> onPlayClicked;
+    std::function<void()> onStopClicked;
 
 private:
     juce::TextButton playButton, stopButton, recordButton;

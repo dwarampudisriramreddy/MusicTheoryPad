@@ -22,6 +22,13 @@ MainComponent::MainComponent() : melodyRoll(RollType::Melody, "Melody"), chordRo
     } else {
         setAudioChannels (2, 2);
     }
+    
+    bottomBar.onPlayClicked = [this]() {
+        audioEngine.setPlaying(true);
+    };
+    bottomBar.onStopClicked = [this]() {
+        audioEngine.setPlaying(false);
+    };
 }
 MainComponent::~MainComponent() { shutdownAudio(); }
 void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate) { audioEngine.prepareToPlay(samplesPerBlockExpected, sampleRate); }
